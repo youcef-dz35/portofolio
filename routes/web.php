@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/index', [
+
+Route::get('/', [
     'uses' => 'contactMessageController@create'
 
 ])->name('index');
