@@ -16,7 +16,7 @@ Route::get('/', [
     'uses' => 'contactMessageController@create'
 
 ])->name('index');
-Route::post('/index', [
+Route::post('/', [
     'uses' => 'contactMessageController@store',
     'as' =>'contact.store'
 
