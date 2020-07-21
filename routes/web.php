@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Mail\TestEmail;
+use SendGrid\Mail\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +29,11 @@ Route::post('/', [
 Route::get('/single', function () {
     return view('single');
 })->name('single');
+
+Route::get('/getmail',function(){
+    $data = ['message' => 'This is a test!'];
+
+    Mail::to('kebiryoucef07@gmail.com')->send(new TestEmail($data));
+    return back();
+
+})->name('testmail') ;
